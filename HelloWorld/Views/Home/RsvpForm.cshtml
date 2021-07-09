@@ -1,0 +1,19 @@
+﻿@model HelloWorld.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm())
+{
+    <p>Name: @Html.TextBoxFor(t => t.Name)</p>
+    <p>Phone: @Html.TextBoxFor(t => t.Phone)</p>
+    <p>
+        Will Attend: @Html.DropDownListFor(t => t.WillAttend, new[]
+                {
+                new SelectListItem { Text="Yes, I'll be there", Value=bool.TrueString},
+                new SelectListItem{Text="No, I can't come", Value=bool.FalseString},
+                }, "Choose an option")
+    </p>
+    <input type="submit" value="Submit RSVP" />
+}
