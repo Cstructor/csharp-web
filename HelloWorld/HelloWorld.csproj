@@ -106,6 +106,8 @@
     <Content Include="Web.config" />
     <Content Include="Views\Home\Product.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\_MainLayout.cshtml" />
+    <Content Include="Views\_viewstart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />

@@ -16,6 +16,8 @@ namespace HelloWorld.Controllers
 
         public ActionResult Product()
         {
+            ViewBag.MuyTitle = "hello";
+
             var myProduct = new Models.Product
             {
                 ProductId = 1,

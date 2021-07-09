@@ -1,13 +1,13 @@
 ﻿
 @{
-    Layout = null;
+    //Layout = null;
+    ViewBag.MuyTitle = "Muy Main Page";
 }
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <style>
         .btn a {
@@ -27,6 +27,14 @@
 
         <div class="btn btn-success">
             @Html.ActionLink("RSVP Now", "RsvpForm")
+        </div>
+
+        <div class="btn btn-success">
+            @Html.ActionLink("Product", "Product")
+        </div>
+
+        <div class="btn btn-success">
+            @Html.ActionLink("Products", "Products")
         </div>
     </div>
 </body>
