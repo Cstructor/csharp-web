@@ -2,17 +2,32 @@
 @{
     Layout = null;
 }
-
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 <body>
-    <p>The party is tonight.</p>
-    <a href="/home/rsvpform">RSVP Now</a>
-    @Html.ActionLink("RSVP Now", "RsvpForm")
+    <div class="text-center">
+        <h2>The party is tonight.</h2>
+        <h3>And you're invited</h3>
+
+        <div class="btn btn-success">
+            @Html.ActionLink("RSVP Now", "RsvpForm")
+        </div>
+    </div>
 </body>
 </html>

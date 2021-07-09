@@ -19,8 +19,6 @@ namespace HelloWorld.Controllers
         {
             var guestResponse = new Models.GuestResponse
             {
-                Name = "Dave",
-                Email = "Email@",
                 SelectItems = new[]
                {
                 new SelectListItem { Text="Yes, I'll be there", Value=bool.TrueString},
@@ -34,7 +32,20 @@ namespace HelloWorld.Controllers
         [HttpPost]
         public ActionResult RsvpForm(Models.GuestResponse guestResponse)
         {
-            return View("Thanks", guestResponse);
+            if (ModelState.IsValid)
+            {
+                return View("Thanks", guestResponse);
+            }
+            else
+            {
+                guestResponse.SelectItems = new[]
+                      {
+                        new SelectListItem { Text="Yes, I'll be there", Value=bool.TrueString},
+                        new SelectListItem{Text="No, I can't come", Value=bool.FalseString},
+                        };
+
+                return View(guestResponse);
+            }
         }
     }
 }

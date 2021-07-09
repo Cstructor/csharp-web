@@ -1,11 +1,19 @@
 ﻿@model HelloWorld.Models.GuestResponse
 
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/styles.css" />
+    <title>RsvpForm</title>
+</head>
+
 @{
     Layout = null;
 }
 
 @using (Html.BeginForm())
 {
+    @Html.ValidationSummary()
+
     <p>Name: @Html.TextBoxFor(t => t.Name)</p>
     <p>Email: @Html.TextBoxFor(t => t.Email)</p>
     <p>Phone: @Html.TextBoxFor(t => t.Phone)</p>
