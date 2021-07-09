@@ -1,0 +1,13 @@
+﻿@model HelloWorld.Models.Product
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<body>
+    @Model.Name - @Model.Description - @Model.Price.ToString("C")
+</body>
+</html>
