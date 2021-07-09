@@ -1,0 +1,21 @@
+﻿@model HelloWorld.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<h1>Thank you, @Model.Name we'll contact you at @Model.Email</h1>
+
+@if (Model.WillAttend == true)
+{
+    int x = 1;
+    x++;
+
+   <p class="highlight">Thanks for coming, your the @x caller. </p>
+}
+else
+{
+    @:Sorry you can't make it.
+}
