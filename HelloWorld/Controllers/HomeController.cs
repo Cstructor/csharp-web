@@ -11,6 +11,14 @@ namespace HelloWorld.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            //int x = 1;  // add me
+            //x = x / (x - 1); // add me
+
+            return View();
+        }
+
+        public ActionResult Error()
+        {
             return View();
         }
 
@@ -39,6 +47,37 @@ namespace HelloWorld.Controllers
                 new Models.Product{ ProductId = 3, Name="Third One", Price = 3.33m, ProductCount= 2 },
                 new Models.Product{ ProductId = 4, Name="Fourth One", Price = 4.44m, ProductCount = 3},
             };
+
+            //foreach (var item in products)
+            //{
+            //    try
+            //    {
+            //        if (item != null)
+            //        {
+            //            item.Price =  2/ item.Price;
+            //        }
+            //        else
+            //        {
+            //            // email developer
+            //        }
+            //    }
+            //    catch (DivideByZeroException ex)
+            //    {
+            //        // log productId
+            //        //item.Hide = true;
+            //        //throw;
+            //    }
+            //    catch (FieldAccessException ex)
+            //    {
+            //        // log
+            //        throw;
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        // log
+            //        // email
+            //    }
+            //}
 
             return View(products);
         }
