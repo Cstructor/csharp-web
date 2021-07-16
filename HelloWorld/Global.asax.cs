@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Autofac;
+using Autofac.Integration.Mvc;
 
 namespace HelloWorld
 {
@@ -14,20 +17,56 @@ namespace HelloWorld
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            RegisterAutofac();
         }
 
-        protected void Application_Error()
+        private void RegisterAutofac()
         {
-            var exception = Server.GetLastError();
+            var builder = new ContainerBuilder();
 
-            Server.ClearError();
+            builder.RegisterControllers(Assembly.GetExecutingAssembly());
 
-            var routeData = new RouteData();
-            routeData.Values.Add("controller", "Home");
-            routeData.Values.Add("action", "Error");
+            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+                //.AsSelf()
+                .AsImplementedInterfaces();
 
-            IController errorController = new Controllers.HomeController();
-            errorController.Execute(new RequestContext(new HttpContextWrapper(Context), routeData));
+            //builder.RegisterType<ContactRepository>().As<IContactRepository>();
+
+            var container = builder.Build();
+
+            // Configure dependency resolver.
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+        }
+
+        protected void xApplication_Error()
+        {
+            try
+            {
+                var exception = Server.GetLastError();
+
+                Server.ClearError();
+
+                // log
+                // email
+            }
+            catch (Exception ex)
+            {
+                // ignore
+            }
+
+            try
+            {
+                var routeData = new RouteData();
+                routeData.Values.Add("controller", "Home");
+                routeData.Values.Add("action", "Error");
+
+                //IController errorController = new Controllers.HomeController();
+                //errorController.Execute(new RequestContext(new HttpContextWrapper(Context), routeData));
+            }
+            catch (Exception ex)
+            {
+                // ignore
+            }
         }
     }
 }
