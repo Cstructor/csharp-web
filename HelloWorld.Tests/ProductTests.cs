@@ -41,11 +41,11 @@ namespace HelloWorld.Tests
                 {
                     return new Product[]
                     {
-                new Product{ Name="Baseball", Price=11} ,
-                new Product{ Name="Football", Price=8},
-                new Product{ Name="Tennis", Price=13},
-                new Product{ Name="Golf", Price=3},
-                new Product{ Name="Ping", Price=12},
+                    new Product{ Name="Baseball", Price=11} ,
+                    new Product{ Name="Football", Price=8},
+                    new Product{ Name="Tennis", Price=13},
+                    new Product{ Name="Golf", Price=3},
+                    new Product{ Name="Ping", Price=12},
                     };
                 });
 
