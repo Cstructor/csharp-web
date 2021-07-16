@@ -27,7 +27,7 @@ namespace HelloWorld
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
 
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
-                //.AsSelf()
+                //.AsSelf() // PLEASE AVOID - IT DETERS FROM TESTABLE CODE
                 .AsImplementedInterfaces();
 
             //builder.RegisterType<ContactRepository>().As<IContactRepository>();
