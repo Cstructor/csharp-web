@@ -45,8 +45,11 @@ namespace HelloWorld.Tests
             {
                 var items = new[]
                 {
-                    new Product{ Name="Tennis ball"} ,
-                    new Product{ Name="Golf ball"},
+                    new Product{ Name="Baseball", Price=11} ,
+                    new Product{ Name="Football", Price=8},
+                    new Product{ Name="Tennis", Price=13},
+                    new Product{ Name="Golf", Price=3},
+                    new Product{ Name="Ping", Price=12},
                 };
                 return items;
             }

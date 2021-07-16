@@ -6,15 +6,10 @@ namespace HelloWorld
     public interface IProductRepository
     {
         IEnumerable<Product> Products { get; }
-        bool GetPrice();
     }
 
     public class ProductRepository : IProductRepository
     {
-        public bool GetPrice()
-        {
-            return true;
-        }
         public IEnumerable<Product> Products
         {
             get
