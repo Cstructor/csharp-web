@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace HelloWorld.Controllers
 {
+    [Logging]
     public class HomeController : Controller
     {
         private IProductRepository productRepository;
