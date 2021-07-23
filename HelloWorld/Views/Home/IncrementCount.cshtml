@@ -1,0 +1,15 @@
+﻿@{ 
+    int count = 0;
+
+    // Check if MyCount exists
+    if (Session["MyCount"] != null)
+    {
+        count = (int)Session["MyCount"];
+        count++;
+    }
+
+    // Create the MyCount session variable
+    Session["MyCount"] = count;
+}
+
+<p>Session Count: @Session["MyCount"]</p>

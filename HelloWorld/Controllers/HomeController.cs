@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace HelloWorld.Controllers
 {
-    [Logging]
+    //[Logging]
     public class HomeController : Controller
     {
         private IProductRepository productRepository;
@@ -16,7 +16,13 @@ namespace HelloWorld.Controllers
             this.productRepository = productRepository;
         }
 
+        public PartialViewResult IncrementCount()
+        {
+           return new PartialViewResult();
+        }
+
         // GET: Home
+        //[Logging]
         public ActionResult Index()
         {
             //int x = 1;  // add me

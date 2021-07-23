@@ -25,6 +25,8 @@
         <h2>The party is tonight.</h2>
         <h3>And you're invited</h3>
 
+        @Html.Action("IncrementCount")
+
         <div class="btn btn-success">
             @Html.ActionLink("RSVP Now", "RsvpForm")
         </div>

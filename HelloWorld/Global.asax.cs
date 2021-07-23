@@ -17,6 +17,11 @@ namespace HelloWorld
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            // Register LoggingAttribute for all Controllers
+            //GlobalFilters.Filters.Add(new LoggingAttribute());
+            //GlobalFilters.Filters.Add(new AuthorizeIPAddressAttribute());
+
             RegisterAutofac();
         }
 
